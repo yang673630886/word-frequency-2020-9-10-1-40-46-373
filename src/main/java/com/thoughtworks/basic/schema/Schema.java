@@ -1,13 +1,22 @@
 package com.thoughtworks.basic.schema;
 
+
 import java.util.Set;
 
 public class Schema {
-    public Schema(Set<FlagsSchema> flagSchema) {
+    Set<FlagsSchema> flagsSchema;
 
+    public Schema(Set<FlagsSchema> flagsSchema){
+        this.flagsSchema = flagsSchema;
     }
 
-    public long getValueOf(String l) {
-        return 0;
+    //获得schema中的类型
+    public Object getValueOf(String flag){
+        return flagsSchema.stream()
+                .filter(flagSchema -> flagSchema.equalsWith(flag))
+                .findFirst()
+                .get()
+                .getType();
     }
+
 }
