@@ -44,4 +44,10 @@ public class ArgsTest {
         Args args1 = new Args("l true",schema);
         Assert.assertEquals(true,args1.getValueOf("l"));
     }
+
+    @Test
+    public void should_return_boolean_integer_true_given_l_d() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        Args args1 = new Args("l true -p 8080",schema);
+        Assert.assertEquals(8080,args1.getValueOf("p"));
+    }
 }
