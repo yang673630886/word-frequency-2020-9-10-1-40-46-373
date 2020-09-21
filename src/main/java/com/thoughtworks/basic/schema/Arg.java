@@ -1,6 +1,5 @@
 package com.thoughtworks.basic.schema;
 
-import jdk.nashorn.internal.codegen.types.BooleanType;
 
 import java.lang.reflect.InvocationTargetException;
 
