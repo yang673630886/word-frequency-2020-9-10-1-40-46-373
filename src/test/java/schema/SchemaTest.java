@@ -18,4 +18,22 @@ public class SchemaTest {
         Assert.assertEquals(schema.getValueOf("l"),Boolean.TYPE);
     }
 
+    @Test
+    public void should_return_integer_type_when_given_flag(){
+        Set<FlagsSchema> flagSchema = new HashSet<>();
+        flagSchema.add(new FlagsSchema("p",Integer.TYPE));
+        Schema schema = new Schema(flagSchema);
+
+        Assert.assertEquals(schema.getValueOf("p"),Integer.TYPE);
+    }
+
+    @Test
+    public void should_return_String_type_when_given_flag(){
+        Set<FlagsSchema> flagSchema = new HashSet<>();
+        flagSchema.add(new FlagsSchema("d",String.class));
+        Schema schema = new Schema(flagSchema);
+
+        Assert.assertEquals(schema.getValueOf("d"),String.class);
+    }
+
 }
